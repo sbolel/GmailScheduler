@@ -1,4 +1,3 @@
-// Script-as-app template.
 function doGet() {
  return HtmlService.createTemplateFromFile('User_UI.html').evaluate();
 }
@@ -14,4 +13,3 @@ function getPrefs() {
 function restoreDefaultPrefs(form_object) {
   return clearPreferences();
 }
-

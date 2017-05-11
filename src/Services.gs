@@ -1,6 +1,9 @@
-// -- MESSAGE SERVICES --
+///
+/// MESSAGE SERVICES
+///
+
 function serviceGetMessageID(message) {
- return message.getId();
+  return message.getId();
 }
 
 function serviceGetMessageIsDraft(message) {
@@ -24,19 +27,19 @@ function serviceGetMessageSubject(message) {
 }
 
 function serviceGetThreads(message) {
-   return message.getThread();
+  return message.getThread();
 }
 
 function serviceGetRawMessage(message) {
-   return message.getRawContent(); 
+  return message.getRawContent();
 }
 
 function serviceGetMessageFrom(message) {
-  return message.getFrom(); 
+  return message.getFrom();
 }
 
 function serviceGetMessageCC(message) {
- return message.getCc();
+  return message.getCc();
 }
 
 function serviceGetMessageBCC(message) {
@@ -51,33 +54,47 @@ function serviceGetMessageAttachments(message) {
   return message.getAttachments();
 }
 
-// -- GMAIL SERVICES --
+///
+/// GMAIL SERVICES
+///
+
 function serviceGmailSearch(search_string) {
- return GmailApp.search(search_string); 
+  return GmailApp.search(search_string);
 }
 
 function serviceCreateLabel(labelName) {
-  return GmailApp.createLabel(labelName); 
+  return GmailApp.createLabel(labelName);
 }
 
-function serviceDeleteLabel(labelName){
+function serviceDeleteLabel(labelName) {
   var label = GmailApp.getUserLabelByName(labelName);
-   return GmailApp.deleteLabel(label);
+  return GmailApp.deleteLabel(label);
 }
 
-function serviceGetUserLabelByName(labelName){
+function serviceGetUserLabelByName(labelName) {
   return GmailApp.getUserLabelByName(labelName);
 }
 
 function serviceRemoveLabelFromThread(thread, label) {
-  var gmail_label_object = executeCommand(function(){return GmailApp.getUserLabelByName(label);}) // can use serviceGetUserLabels() instead
-  executeCommand(function(){thread.removeLabel(gmail_label_object)});
+  var gmail_label_object = executeCommand(function() {
+    return GmailApp.getUserLabelByName(label);
+  }) // can use serviceGetUserLabels() instead
+  executeCommand(function() {
+    thread.removeLabel(gmail_label_object)
+  });
 }
 
 function serviceSendEmailMessage(to, subject, body, htmlBody, cc, bcc, from, attach, name) {
-  return executeCommand( 
+  return executeCommand(
     function() {
-      GmailApp.sendEmail(to, subject, body, {htmlBody: htmlBody, cc: cc, bcc: bcc, from: from, attachments: attach, name: name} );
+      GmailApp.sendEmail(to, subject, body, {
+        htmlBody: htmlBody,
+        cc: cc,
+        bcc: bcc,
+        from: from,
+        attachments: attach,
+        name: name
+      });
     });
 }
 
@@ -85,18 +102,22 @@ function serviceGetUserLabels() {
   return GmailApp.getUserLabels();
 }
 
+///
+/// THREAD SERVICES
+///
 
-// -- THREAD SERVICES
 function serviceAddLabelToThread(thread, label) {
   thread.addLabel(label);
 }
 
 function serviceGetThreadMessages(thread) {
- return thread.getMessages();
+  return thread.getMessages();
 }
 
+///
+/// PROPERTIES SERVICE
+///
 
-// -- PROPERTIES SERVICE --
 function serviceSaveProperty(key, value) {
   UserProperties.setProperties(key, value);
 }
@@ -109,14 +130,14 @@ function serviceClearProperties() {
   UserProperties.deleteAllProperties();
 }
 
-// -- SCRIPT SERVICES --
+///
+/// SCRIPT SERVICES
+///
+
 function serviceGetTriggers() {
- return ScriptApp.getScriptTriggers();
+  return ScriptApp.getScriptTriggers();
 }
 
 function serviceDeleteTrigger(functionName) {
   ScriptApp.deleteTrigger(findTrigger(functionName));
 }
-
-
-
