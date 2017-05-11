@@ -1,0 +1,27 @@
+{
+  "name": "gmail-scheduler",
+  "version": "1.0.0",
+  "author": "Sinan Bolel <hi@sinanbolel.com>",
+  "description": "Gmail Scheduler Script",
+  "license": "MIT",
+  "main": "src/main.gs",
+  "private": true,
+  "homepage": "https://sbolel.github.io/gmail-scheduler",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbolel/gmail-scheduler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sbolel/gmail-scheduler/issues"
+  },
+  "keywords": [
+    "gmail",
+    "gmail-scheduler",
+    "google-scripts",
+    "scheduler",
+    "send-later"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
