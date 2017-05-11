@@ -1,8 +1,8 @@
-var SCHEDULER_EXTRAS_LABEL = 'Extras';
-var SCHEDULER_LABEL = 'GScheduler';
-var SCHEDULER_QUEUE_LABEL = 'Queue';
-var SCHEDULER_SMS_LABEL = 'Sms';
-var SCHEDULER_TIMER_LABEL = 'Timer';
+var SCHEDULER_EXTRAS_LABEL = 'Extras'
+var SCHEDULER_LABEL = 'GScheduler'
+var SCHEDULER_QUEUE_LABEL = 'Queue'
+var SCHEDULER_SMS_LABEL = 'Sms'
+var SCHEDULER_TIMER_LABEL = 'Timer'
 
 var DEFAULT_PREFS = {
   // NOTE these names must match the 'name' attribute in HTML
@@ -13,17 +13,16 @@ var DEFAULT_PREFS = {
   send_message_sms: false,
   timer: [
     '1 hour later',
-    '2 hours later',
     '3 hours later',
     'One day later',
     'tomorrow 9am',
     'next monday 9am'
   ]
-};
+}
 
-var DEFAULT_TIMEZONE = 'default';
-var EMAIL_WELCOME_SUBJECT = 'Welcome to GmailScheduler';
-var EXECUTE_COMMAND_LOGGING = false;
-var NUM_RETRIES = 10;
-var SETTINGS_URL = 'https://script.google.com/macros/s/AKfycbw6hnnKGeG6xUsbRE9c3WSvJibTbaW88DP9f83e8lFnc1v1kL0/exec';
-var USER_PREFS = null;
+var DEFAULT_TIMEZONE = 'default'
+var EMAIL_WELCOME_SUBJECT = 'Welcome to GmailScheduler'
+var EXECUTE_COMMAND_LOGGING = false
+var NUM_RETRIES = 10
+var SETTINGS_URL = 'https://script.google.com/macros/s/AKfycbymnW7p3k9vI8UwQ4f7a7HOEEqqkjHkEncTGQucbsY/exec'
+var USER_PREFS = null

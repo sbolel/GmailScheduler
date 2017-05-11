@@ -4,6 +4,7 @@
   <base target="_top">
   <title>GmailScheduler</title>
   <meta name="author" content="Sinan Bolel <hi@sinanbolel.com>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sugar/2.0.4/sugar.min.js"></script>
   <script>
     var timerLabelValid = false;
 
@@ -12,7 +13,7 @@
       var timerLabelInput = document.getElementById('new_timer_label');
       google.script.run.withSuccessHandler(function() {
         addTimerLabelToList(label);
-        timerLabelDateString.innerHTML = 'Added GScheduler/Timer/"' + label + '" to your gmail now';
+        timerLabelDateString.innerHTML = 'Added GScheduler/Timer/"' + label + '" to your Gmail now';
         timerLabelInput.value = '';
       }).withFailureHandler(showError).createTimerChildLabel(label);
     }
@@ -59,7 +60,7 @@
     }
 
     function init() {
-      console.log('Starting init');
+      Sugar.Date.extend();
       google.script.run.withSuccessHandler(showAlert).withFailureHandler(showError).sendWelcomeEmail();
       google.script.run.withSuccessHandler(restorePrefsHandler).withFailureHandler(showError).getPrefs();
       getHandlers().createTriggers();
